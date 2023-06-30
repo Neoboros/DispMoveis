@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dispositivos Móveis</title>
+    <link rel="stylesheet" href="style.css"> 
+    <script type="text/javascript">
+        var cookies = 0;
+        var clicked_cookie = 1;
+        window.onload = function() {
+        document.body.onselectstart = function() {
+        return false;
+        }}
+        function chscale(scale) {
+            document.querySelector(".cookieshadow").style.scale = scale;
+            document.querySelector(".cookie").style.scale = scale;
+                }
+
+
+        function cookieclick() {
+            cookies += clicked_cookie;
+            document.querySelector(".counter").innerHTML = cookies + " Cookies";
+            const log = document.querySelector(".log");
+            log.appendChild(document.createElement("span"));
+            const numbers = document.querySelectorAll(".log span");
+            numbers.forEach(element => element.innerHTML = "+ " + clicked_cookie);
+            const news = document.querySelector(".news");
+            if (cookies == 5) {
+                document.querySelector(".news p").innerHTML = "Seu primeiro lote vai para o lixo. O guaxinim da vizinhança mal o toca.";
+            } if (cookies == 50) {
+                document.querySelector(".news p").innerHTML = "Sua família aceita experimentar alguns de seus biscoitos.";
+            } if (cookies == 100) {
+                document.querySelector(".news p").innerHTML = "Seus cookies são populares na vizinhança.";
+            } if (cookies == 500) {
+                document.querySelector(".news p").innerHTML = "As pessoas estão começando a falar sobre seus cookies.";
+            }
+            setTimeout(() => {
+                const elem = document.querySelector(".log span");
+                elem.parentNode.removeChild(elem);
+            }, 2000);
+                }
+    </script>       
+</head>
+<body>
+    <section>
+        <div class="news">
+            <p>Você sente vontade de fazer biscoitos. Mas ninguém quer comer seus biscoitos.</p>
+        </div>
+        <div class="border">
+            <img src="assets/img/panelVertical.png">
+        </div>
+    <div class="cookie-wrapper">
+        <div class="milk milk1" src="assets/img/milk.png"> </div>
+        <div class="milk milk2" src="assets/img/milk.png"></div>
+        <div class="milk milk3" src="assets/img/milk.png"></div>
+        <div class="cookie-shower"></div>
+        <div class="gradient"></div>
+        <div class="cookie-counter">
+            <span class="counter">0 Cookies</span>
+        </div>
+        <div class="cookie-container">
+            <div class="log"></div>
+        <img onclick="cookieclick()" onmouseleave="chscale(1)" onmouseover="chscale(1.1)" onmousedown="chscale(0.8)" onmouseup="chscale(1)" class="cookie" src="assets/img/PerfectCookie.png">
+        <img class="cookieshadow" src="assets/img/cookieShadow.png">
+        <img class="shine" src="assets/img/shine.png">
+        <img class="shine shine2" src="assets/img/shine.png">
+    </div>
+    </div>
+    <div class="border">
+        <img src="assets/img/panelVertical.png">
+    </div>
+</section>
+</body>
+</html>

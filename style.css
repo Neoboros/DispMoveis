@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background-image: url("assets/img/bg.jpg");
+    overflow: hidden;
+    pointer-events: none;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.news {
+    position: absolute;
+    align-self: normal;
+    z-index: 1;
+    margin-top: 40px;
+}
+
+.news p {
+    animation: fade 1s forwards linear;
+    color: white;
+    font-family: "Merriweather", serif;
+    font-size: 15px;
+    font-weight: bold;
+    width: 500px;
+    text-align: center;
+}
+
+.milk {
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    bottom: -100px;
+    z-index: 1;
+    background-image: url(assets/img/milk.png);
+}
+
+.milk1 {
+    animation: wave 5s linear infinite alternate-reverse;
+}
+
+.milk2 {
+    animation: wave 10s linear infinite alternate-reverse;
+    opacity: 0.75;
+}
+
+.milk3 {
+    animation: wave 15s linear infinite alternate-reverse;
+    opacity: 0.5;
+}
+
+
+.cookie-shower {
+    height: 100vh;
+    width: 100%;
+    background-image: url(assets/img/cookieShower2.png);
+    position: absolute;
+    top: 0;
+    animation: slide 7s infinite linear;
+}
+
+.gradient {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+}
+
+.cookie-counter {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-self: normal;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter {
+    font-size: 20px;
+    color: white;
+    font-family: "Merriweather", serif;
+    font-weight: bold;
+}
+
+.cookie-wrapper {
+    height: 100vh;
+    width: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.cookie-container {
+    height: fit-content;
+    width: fit-content;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+    height: 250px;
+    width: 250px;
+}
+
+.cookie {
+    height: 250px;
+    width: 250px;
+    transition: .1s;
+    position: absolute;
+    z-index: 2;
+    pointer-events: all;
+}
+
+.cookie:hover {
+    scale: 1.1;
+}
+
+.cookieshadow {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    transition: .1s;
+    z-index: 1;
+}
+
+.shine {
+    height: 400px;
+    width: 400px;
+    animation: rotate 25s forwards linear infinite;
+    opacity: 0.35;
+    position: absolute;
+}
+
+.shine2 {
+    animation: rotate 25s forwards linear reverse infinite;
+}
+
+.log {
+    position: absolute;
+    height: 250px;
+    width: 250px;
+}
+
+.log span {
+    color: white;
+    animation: pos 8s ease-in, opacity 2s linear;
+    position: absolute;
+    font-size: 20px;
+    font-family: "Merriweather", serif;
+    z-index: 3;
+    transform: translate(-50%);
+}
+
+.border {
+    width: fit-content;
+    height: 200vh;
+    background-image: url(assets/img/panelVertical.png);
+}
+
+.chcookiebutton, .chcookiebutton2 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: all;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.chcookiebutton2 {
+    opacity: 0;
+    display: none;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes opacity {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes pos {
+    from {
+        left: 50%;
+        top: 50%;
+    }
+    to {
+        top: -800px;
+        left: 50%;
+    }
+}
+
+@keyframes wave {
+    from {
+        background-position-x: 0;
+    }
+    to {
+        background-position-x: -100px;
+    }
+}
+
+@keyframes move {
+    from {
+        background-position-y: 0;
+    }
+    to {
+        background-position-y: 100px;
+    }
+}
+
+@keyframes slide {
+    from { background-position: 0 0;}
+    to { background-position: 512px 512px;}
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
